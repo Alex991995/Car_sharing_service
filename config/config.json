@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "sasha_user",
+    "password": "sasha_user",
+    "database": "car_sharing",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "sasha_user",
+    "password": "sasha_user",
+    "database": "car_sharing",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "sasha_user",
+    "password": "sasha_user",
+    "database": "car_sharing",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
+

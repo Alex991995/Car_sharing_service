@@ -51,7 +51,13 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
+
+      current_run_id:{
+        type: DataTypes.INTEGER
+      }
     });
+
+    
 
    
   },

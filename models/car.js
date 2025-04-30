@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({Run}) {
-      this.hasMany(Run, {foreignKey: 'fk_car_id'})
+      this.belongsTo(Run, {foreignKey: 'current_run_id' });
     }
   }
   Car.init({
@@ -63,7 +63,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.DATE
     },
-
+    current_run_id:{
+      type: DataTypes.INTEGER
+    }
    
   }, {
     freezeTableName: 'car',

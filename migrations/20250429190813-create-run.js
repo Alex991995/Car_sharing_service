@@ -26,10 +26,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-      fk_car_id:{
-        type: Sequelize.INTEGER,
-        allowNull: false
-      }
+    
     }); 
   },
   async down(queryInterface, Sequelize) {

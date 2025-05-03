@@ -10,8 +10,10 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({Car}) {
-      this.hasOne(Car);
+    static associate({Car, Driver}) {
+      this.hasOne(Car, { foreignKey: 'fk_run_id' });
+      this.belongsTo(Driver, { foreignKey: 'fk_driver_id' });
+
     }
     
   }
@@ -31,14 +33,7 @@ module.exports = (sequelize, DataTypes) => {
     start_mileage: {
       type: DataTypes.INTEGER
     },
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE
-    },
-    updatedAt: {
-      allowNull: false,
-      type: DataTypes.DATE
-    }
+    
   }, {
     freezeTableName: 'run',
     sequelize,

@@ -53,7 +53,8 @@ module.exports = {
       },
 
       current_run_id:{
-        type: DataTypes.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false
       }
     });
 

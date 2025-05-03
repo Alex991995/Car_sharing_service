@@ -3,19 +3,23 @@ const express =  require('express') ;
 const sequelizeErd = require('sequelize-erd');
 
 const app = express()
+const port = 3000
 app.use(express.json())
 
 
-app.listen({port: 5000}, main)
+app.listen(port, main)
 
 // (async () => {
 //   const svg = await sequelizeErd({ source: sequelize });
 //   writeFileSync('./erd.svg', svg);
 // })();
 
+
+
 async function main() {
-  console.log('serves is runnig on port'+ 5000)
-  await sequelize.sync({ force: true })
+  // await sequelize.sync({ force: true });
+  await sequelize.sync()
+
   console.log('database is sync')
 }
-main()
+

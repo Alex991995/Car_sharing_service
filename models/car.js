@@ -1,6 +1,6 @@
 'use strict';
 const { Model } = require('sequelize');
-const Run = require('./run');
+
 module.exports = (sequelize, DataTypes) => {
   class Car extends Model {
     /**
@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
 
     }
   }
+  Car.fi
   Car.init(
     {
       car_id: {
@@ -35,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.STRING(17),
         validate: {
-          len: [17, 17], // VIN must be exactly 17 characters
+          len: [17, 17],
         },
       },
       model: {
@@ -50,7 +51,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       fuel_level: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.DECIMAL(5,2),
         allowNull: false,
         validate: {
           min: 0,
@@ -86,11 +87,7 @@ module.exports = (sequelize, DataTypes) => {
           max: 180,
         },
       },
-     
-      // current_run_id: {
-      //   type: DataTypes.INTEGER,
-      //   allowNull: false,
-      // }
+
     },
     {
       freezeTableName: 'car',

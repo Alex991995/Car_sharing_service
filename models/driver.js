@@ -15,6 +15,8 @@ module.exports = (sequelize, DataTypes) => {
 
     }
   }
+
+ 
   Driver.init({
     driver_id:{
       allowNull: false,

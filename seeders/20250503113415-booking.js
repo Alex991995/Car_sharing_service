@@ -43,16 +43,18 @@ module.exports = {
         fk_run_id:5,
         createdAt: new Date(),
         updatedAt: new Date()
-      }
+      },
+      {
+        finish_mileage: 13387.5,
+        finish_fuel_level: 75.2,
+        fk_car_id: 2,
+        fk_run_id:4,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
   }
 };

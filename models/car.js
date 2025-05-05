@@ -3,18 +3,14 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Car extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+    
     static associate({ Run, Booking }) {
       this.belongsTo(Run, { foreignKey: 'fk_run_id' });
       this.hasMany(Booking, {foreignKey: 'fk_car_id'})
 
     }
   }
-  Car.fi
+
   Car.init(
     {
       car_id: {
@@ -53,10 +49,6 @@ module.exports = (sequelize, DataTypes) => {
       fuel_level: {
         type: DataTypes.DECIMAL(5,2),
         allowNull: false,
-        validate: {
-          min: 0,
-          max: 1,
-        },
       },
       mileage: {
         type: DataTypes.INTEGER,

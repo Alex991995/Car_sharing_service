@@ -9,7 +9,9 @@
     "sequelize": "^6.37.7"
   },
   "scripts": {
-    "migrate": "npx sequelize-cli db:migrate",
+    "create:db": "npx sequelize db:create",
+    "dev": "node app.js",
+    "create:data": "npx sequelize-cli db:seed:all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

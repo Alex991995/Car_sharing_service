@@ -5,11 +5,7 @@ const {
 const Car = require('./car');
 module.exports = (sequelize, DataTypes) => {
   class Run extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+    
     static associate({Car, Driver}) {
       this.hasOne(Car, { foreignKey: 'fk_run_id' });
       this.belongsTo(Driver, { foreignKey: 'fk_driver_id' });

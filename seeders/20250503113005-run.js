@@ -54,17 +54,19 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          start_date: new Date('2022-11-19T03:20:00'),
+          start_fuel_level: '1/4',
+          start_mileage: 19200,
+          fk_driver_id: 2,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {},
     );
   },
 
   async down(queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
   },
 };
